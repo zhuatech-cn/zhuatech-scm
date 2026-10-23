@@ -1,0 +1,47 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "normalDemand": "#500",
+      "upperScenarioDemand": "#800",
+      "upperScenarioShortfall": "#100"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "availableStock": "300"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "availableStock": "700"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "upperLeadDays": "4"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "dailyDemand": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "upperScenarioShortfall": "#0"
+    },
+    "error": false
+  }
+]

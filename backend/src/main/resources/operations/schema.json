@@ -1,0 +1,88 @@
+{
+  "slug": "scm",
+  "title": "补货提前期上行情景与缓冲缺口",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "dailyDemand",
+      "label": "同单位日均需求",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "normalLeadDays",
+      "label": "常规提前天数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    },
+    {
+      "key": "upperLeadDays",
+      "label": "情景上界天数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    },
+    {
+      "key": "availableStock",
+      "label": "可用库存",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "confirmedIncoming",
+      "label": "期间确认到货",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "normalDemand",
+      "label": "常规提前期需求"
+    },
+    {
+      "key": "upperScenarioDemand",
+      "label": "上界情景需求"
+    },
+    {
+      "key": "extraLeadBuffer",
+      "label": "额外提前期缓冲"
+    },
+    {
+      "key": "upperScenarioShortfall",
+      "label": "上界情景缺口"
+    }
+  ],
+  "description": "将日均需求、最长供货天数和已确认可用供给合并，计算提前期上行情景缓冲，不将规则模型包装成预测。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "dailyDemand": "100",
+        "normalLeadDays": "5",
+        "upperLeadDays": "8",
+        "availableStock": "600",
+        "confirmedIncoming": "100"
+      }
+    ]
+  }
+}
